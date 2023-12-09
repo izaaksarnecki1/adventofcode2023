@@ -37,6 +37,20 @@ def count_bags(content: str) -> int:
     return counter
 
 
+def count_bags2(filename: str) -> int:
+    with open(filename, "r") as f:
+        games = f.readlines()
+        total_sum = sum(
+            [
+                max([int(cube.split()[0]) for cube in [subset for subset in game.split(':')[1].strip().split(';') for subset in subset.split(', ')] if cube.split()[1] == 'red']) *
+                max([int(cube.split()[0]) for cube in [subset for subset in game.split(':')[1].strip().split(';') for subset in subset.split(', ')] if cube.split()[1] == 'green']) *
+                max([int(cube.split()[0]) for cube in [subset for subset in game.split(':')[1].strip().split(';') for subset in subset.split(', ')] if cube.split()[1] == 'blue'])
+                for game in games
+            ]
+        )
+        print("Sum of IDs of possible games:", total_sum)
+        return total_sum
+
 def main():
     filename = "day2/day2.txt"
     content = get_content(filename)
