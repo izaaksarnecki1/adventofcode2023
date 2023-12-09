@@ -7,7 +7,7 @@ def get_content(filename: str) -> str:
 
 
 def main():
-    filename = "day1/day1.txt"
+    filename = "day1/input.txt"
     file_content = get_content(filename)
     cals = get_cals1(file_content)
     counter = 0

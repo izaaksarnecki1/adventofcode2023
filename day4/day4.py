@@ -39,7 +39,7 @@ def scratch2(game: list) -> int:
 
 
 def main():
-    filename = "day4/day4.txt"
+    filename = "day4/input.txt"
     content = get_content(filename)
     # counter = 0
     # for game in content:

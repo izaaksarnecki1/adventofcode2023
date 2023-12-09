@@ -52,7 +52,7 @@ def count_bags2(filename: str) -> int:
         return total_sum
 
 def main():
-    filename = "day2/day2.txt"
+    filename = "day2/input.txt"
     content = get_content(filename)
     print(count_bags(content))
 
