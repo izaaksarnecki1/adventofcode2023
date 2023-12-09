@@ -28,7 +28,9 @@ def sol1(content: list) -> int:
 
 
 def prepare2(content: str) -> list:
-    content = [[el.replace(" ", "") for el in line.split(':')] for line in content.splitlines()]
+    content = [
+        [el.replace(" ", "") for el in line.split(":")] for line in content.splitlines()
+    ]
     return [int(content[0][1]), int(content[1][1])]
 
 
@@ -48,6 +50,7 @@ def main():
     print("Part 1: ", sol1(content1))
     content2 = prepare2(content)
     print("Part 2: ", sol2(content2))
+
 
 if __name__ == "__main__":
     main()
